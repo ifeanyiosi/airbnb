@@ -22,13 +22,15 @@ model User {
   lastName     String
   profileImage String?
 
-  Home Home[]
+  Home      Home[]
+  Favorites Favorites[]
 }
 
 model Home {
-  id               String  @id @default(uuid())
+  id               String      @id @default(uuid())
   title            String?
   description      String?
+  Favorites        Favorites[]
   guests           String?
   bedrroms         String?
   bathrooms        String?
@@ -36,11 +38,22 @@ model Home {
   photo            String?
   price            Int?
   categoryName     String?
-  addedCategory    Boolean @default(false)
-  addedDescription Boolean @default(false)
-  addedLocation    Boolean @default(false)
+  addedCategory    Boolean     @default(false)
+  addedDescription Boolean     @default(false)
+  addedLocation    Boolean     @default(false)
 
   createdAt DateTime @default(now())
   User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+}
+
+model Favorites {
+  id String @id @default(uuid())
+
+  Home   Home?   @relation(fields: [homeId], references: [id])
+  homeId String?
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+
+  createdAt DateTime @default(now())
 }
