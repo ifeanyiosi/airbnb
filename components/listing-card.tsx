@@ -12,8 +12,8 @@ interface iAppProps {
   location: string;
   price: number;
   userId: string | undefined;
-  isFav: boolean;
-  favId: string;
+  isFav?: boolean;
+  favId?: string;
   homeId: string;
   pathname: string;
 }
