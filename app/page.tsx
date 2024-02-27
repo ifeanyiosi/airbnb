@@ -94,7 +94,7 @@ async function ShowItems({
           description="Please check other categories or you can create your own listing"
         />
       ) : (
-        <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 mb-36">
           {data?.map((item) => (
             <ListingCard
               pathname="/"

@@ -44,7 +44,7 @@ export default async function UserNav() {
 
       <DropdownMenuContent
         align="end"
-        className="w-[200px]  z-10 bg-white border-none "
+        className="w-[200px]  z-[60] bg-white border-none "
       >
         {user ? (
           <>

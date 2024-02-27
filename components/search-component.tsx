@@ -47,11 +47,13 @@ export default function SearchModalComponent() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="rounded-full px-5 py-2 border flex items-center cursor-pointer">
-          <div className="flex h-full divide-x font-medium">
+        <div className="rounded-full shadow-md px-5 py-2 border flex items-center cursor-pointer">
+          <div className="flex flex-col md:flex-row h-full lg:divide-x text-[0.75rem] font-medium">
             <p className="px-4">Anywhere</p>
-            <p className="px-4">Any week</p>
-            <p className="px-4">Add Guests</p>
+            <div className="flex lg:divide-x whitespace-nowrap ">
+              <p className="px-4">Any week</p>
+              <p className="px-4">Add Guests</p>
+            </div>
           </div>
 
           <Search className="bg-primary text-white p-1 w-8 h-8 rounded-full" />
