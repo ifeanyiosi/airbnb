@@ -34,7 +34,7 @@ export default function ListingCard({
 
   return (
     <div className="flex flex-col">
-      <Link href={`/home/${homeId}`} className="relative h-72">
+      <div className="relative h-72">
         <Image
           className="rounded-lg h-full object-cover "
           src={`https://rieqgskdmpgpzjefrevq.supabase.co/storage/v1/object/public/images/${imagePath}`}
@@ -43,7 +43,7 @@ export default function ListingCard({
         />
 
         {userId && (
-          <div className="z-10 absolute top-2 right-2">
+          <div className="z-100 absolute top-2 right-2">
             {isFav ? (
               <form action={deleteFavorites}>
                 <input type="hidden" name="favId" value={favId} />
@@ -61,7 +61,7 @@ export default function ListingCard({
             )}
           </div>
         )}
-      </Link>
+      </div>
 
       <Link className="mt-2" href={`/home/${homeId}`}>
         <h3 className="font-medium text-base ">
